@@ -1676,8 +1676,131 @@ a.contact-item:hover {
 }
 
 @media (max-width: 768px) {
+  :root {
+    --header-height: 68px;
+  }
+
+  body {
+    font-size: 1rem;
+  }
+
+  .container {
+    padding: 0 1.15rem;
+  }
+
   .section {
-    padding: 4rem 0;
+    padding: 3.5rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 2.25rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(1.75rem, 6vw, 2.25rem);
+    line-height: 1.18;
+  }
+
+  h2 {
+    font-size: clamp(1.45rem, 5vw, 1.9rem);
+    line-height: 1.22;
+  }
+
+  h3 {
+    font-size: clamp(1.15rem, 4vw, 1.35rem);
+  }
+
+  .btn {
+    white-space: normal;
+    word-break: break-word;
+    max-width: 100%;
+    line-height: 1.35;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.94rem;
+  }
+
+  .btn--sm {
+    padding: 0.6rem 0.95rem;
+    font-size: 0.85rem;
+  }
+
+  /* Header & Mobile Navigation */
+  .header-inner {
+    gap: 0.5rem;
+  }
+
+  .brand {
+    gap: 0.6rem;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+
+  .brand-mark svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .brand-text {
+    min-width: 0;
+  }
+
+  .brand-name {
+    font-size: 1.05rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .brand-sub {
+    font-size: 0.68rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .header-actions {
+    gap: 0.45rem;
+    flex-shrink: 0;
+  }
+
+  .phone-pill {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .phone-pill span {
+    display: none;
+  }
+
+  .header-actions .btn--sm {
+    white-space: nowrap;
+    padding: 0.55rem 0.8rem;
+    font-size: 0.82rem;
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 8px;
+    flex-shrink: 0;
   }
 
   .main-nav {
@@ -1688,49 +1811,510 @@ a.contact-item:hover {
     right: 0;
     background-color: var(--bg-primary);
     flex-direction: column;
-    padding: 1.5rem;
+    align-items: stretch;
+    padding: 0.75rem 1.15rem 1.25rem;
     border-bottom: 1px solid var(--border-stone);
     box-shadow: var(--shadow-card);
-    gap: 1rem;
+    gap: 0;
   }
 
   .main-nav.open {
     display: flex;
   }
 
-  .mobile-menu-btn {
-    display: inline-flex;
+  .nav-link {
+    font-size: 1rem;
+    padding: 0.85rem 0.25rem;
+    border-bottom: 1px solid var(--border-stone);
+    width: 100%;
   }
 
-  .phone-pill span {
+  .nav-link:last-child {
+    border-bottom: none;
+  }
+
+  .nav-link::after {
     display: none;
   }
 
-  .therapy-cards-grid,
-  .process-grid,
-  .about-pillars,
-  .service-chips,
-  .form-row,
-  .footer-grid {
-    grid-template-columns: 1fr;
+  /* Hero & Trust Banner */
+  .hero {
+    padding: 2.25rem 0 3rem;
+  }
+
+  .hero-grid {
+    gap: 2rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.09em;
+  }
+
+  .hero-eyebrow::before {
+    width: 16px;
+    flex-shrink: 0;
+  }
+
+  .hero-lead {
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+    line-height: 1.65;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
   }
 
   .hero-QuickInfo {
     grid-template-columns: 1fr;
     gap: 0.85rem;
+    padding-top: 1.25rem;
+  }
+
+  .quick-stat {
+    padding-bottom: 0.75rem;
+    border-bottom: 1px dashed var(--border-stone);
+  }
+
+  .quick-stat:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .hero-image-frame {
+    border-radius: 18px 18px 44px 18px;
+    border-width: 4px;
+  }
+
+  .hero-floating-card {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 0.85rem;
+    padding: 0.95rem 1.1rem;
+  }
+
+  .trust-strip {
+    padding: 2rem 0;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  /* Über mich, Therapien & Homöopathie-Deep-Dive */
+  .about-grid {
+    gap: 2.25rem;
+  }
+
+  .about-image-wrap {
+    border-radius: 18px 44px 18px 18px;
+    border-width: 4px;
+  }
+
+  .about-badge {
+    padding: 1rem 1.1rem;
+    margin-top: 0.85rem;
+  }
+
+  .about-pillars {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+    margin: 1.5rem 0;
+  }
+
+  #about-booking-link {
+    width: 100%;
+  }
+
+  .therapy-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .therapy-card-body {
+    padding: 1.35rem 1.25rem;
+  }
+
+  .therapy-card-body .btn {
+    width: 100%;
+  }
+
+  .deep-dive-box {
+    padding: 1.35rem 1.15rem;
+    border-radius: var(--radius-md);
+  }
+
+  .deep-dive-header {
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.1rem;
+  }
+
+  .tabs-nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tab-btn {
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-size: 0.88rem;
+  }
+
+  .tab-panel.active {
+    gap: 1.5rem;
+  }
+
+  .tab-panel-content .btn {
+    width: 100%;
+  }
+
+  .indikation-checklist {
+    padding: 1.15rem;
+  }
+
+  /* Hausbesuch-Ablauf, Tätigkeitsraum, Kontakt, Footer & Modals */
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .process-step {
+    padding: 1.35rem 1.25rem;
+  }
+
+  .area-box {
+    padding: 1.5rem 1.25rem;
+    gap: 1.5rem;
+    border-radius: var(--radius-md);
+  }
+
+  .area-info h3 {
+    font-size: 1.35rem;
+  }
+
+  .area-info .btn {
+    width: 100%;
+  }
+
+  .city-badges {
+    gap: 0.5rem;
+  }
+
+  .city-badge {
+    font-size: 0.84rem;
+    padding: 0.48rem 0.85rem;
+  }
+
+  .contact-grid {
+    gap: 1.5rem;
+  }
+
+  .contact-info-card,
+  .contact-cta-card {
+    padding: 1.4rem 1.2rem;
+    border-radius: var(--radius-md);
+  }
+
+  .contact-list {
+    gap: 0.85rem;
+    margin: 1.25rem 0;
+  }
+
+  .contact-item {
+    padding: 0.85rem;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .contact-item > div:last-child {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .contact-item-value {
+    font-size: 1.02rem !important;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    display: block;
+    line-height: 1.35;
+  }
+
+  .hours-box {
+    padding: 1rem 1.1rem;
+  }
+
+  .hours-row {
+    flex-wrap: wrap;
+    gap: 0.2rem 0.75rem;
+    font-size: 0.86rem;
+  }
+
+  .site-footer {
+    padding: 3rem 0 2rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .footer-links a,
+  .footer-links button {
+    padding: 0.2rem 0;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .modal-backdrop {
+    padding: 0.85rem;
+  }
+
+  .modal-dialog {
+    padding: 1.5rem 1.2rem;
+    max-height: 88vh;
+    border-radius: var(--radius-md);
+  }
+
+  .modal-dialog h2 {
+    font-size: 1.35rem;
+    padding-right: 2.5rem;
+  }
+
+  /* Termin-Assistent (termin.html) */
+  .booking-hero {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .booking-layout {
+    padding: 1.75rem 0 3.5rem;
+  }
+
+  .booking-grid {
+    gap: 1.75rem;
+  }
+
+  .wizard-card {
+    padding: 1.35rem 1.15rem;
+    border-radius: var(--radius-md);
+    scroll-margin-top: calc(var(--header-height) + 12px);
   }
 
   .stepper {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.15rem;
   }
 
-  .pet-selector,
+  .step-indicator {
+    padding: 0.55rem 0.6rem;
+    font-size: 0.78rem;
+    gap: 0.45rem;
+  }
+
+  .step-badge {
+    width: 22px;
+    height: 22px;
+    font-size: 0.72rem;
+  }
+
+  .wizard-step h2 {
+    font-size: 1.25rem !important;
+    line-height: 1.3;
+  }
+
+  .pet-selector {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .pet-option {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 0.8rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .pet-option svg {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+  }
+
+  .pet-option span {
+    margin-left: auto;
+    text-align: right;
+    font-size: 0.76rem;
+  }
+
+  .service-chips,
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-size: 1rem;
+    min-height: 46px;
+  }
+
+  .time-slots-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.55rem;
+  }
+
+  .time-slot-btn {
+    padding: 0.7rem 0.45rem;
+    font-size: 0.82rem;
+  }
+
+  .wizard-footer {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+  }
+
+  .wizard-footer .btn {
+    width: 100%;
+  }
+
+  .wizard-footer > span {
+    text-align: center;
+    display: block;
+  }
+
+  #booking-confirmation-view .btn {
+    width: 100%;
+  }
+
+  .email-preview-box {
+    padding: 1rem;
+    font-size: 0.76rem;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  .summary-card {
+    padding: 1.35rem 1.2rem;
+    border-radius: var(--radius-md);
+  }
+
+  /* Demo Switcher Bar (Mobile) */
+  .demo-switcher-bar {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: 0.5rem 0.75rem;
+    gap: 0.45rem;
+  }
+
+  .demo-switcher-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  .demo-view-tab {
+    white-space: normal;
+    line-height: 1.25;
+    padding: 0.45rem 0.4rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.85rem;
+  }
+
+  .brand {
+    gap: 0.5rem;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+  }
+
+  .brand-mark svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .brand-name {
+    font-size: 0.96rem;
+    line-height: 1.08;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .brand-sub {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 0.35rem;
+  }
+
+  .phone-pill,
+  .mobile-menu-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .header-actions .btn--sm {
+    padding: 0.48rem 0.62rem;
+    font-size: 0.76rem;
+  }
+
+  .header-actions .btn--sm svg {
+    display: none;
+  }
+
   .time-slots-grid {
     grid-template-columns: 1fr;
   }
 
-  .deep-dive-box {
-    padding: 1.5rem;
+  .pet-option {
+    flex-wrap: wrap;
+  }
+
+  .pet-option span {
+    margin-left: 0;
+    width: 100%;
+    text-align: left;
+    padding-left: 2.25rem;
+    margin-top: -0.25rem;
   }
 }
 
@@ -3081,16 +3665,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainNav = document.getElementById('main-nav');
 
   if (mobileBtn && mainNav) {
+    const closeMobileMenu = () => {
+      mainNav.classList.remove('open');
+      mobileBtn.setAttribute('aria-expanded', 'false');
+    };
+
     mobileBtn.addEventListener('click', () => {
       const isOpen = mainNav.classList.toggle('open');
       mobileBtn.setAttribute('aria-expanded', String(isOpen));
     });
 
     mainNav.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        mainNav.classList.remove('open');
-        mobileBtn.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (
+        mainNav.classList.contains('open') &&
+        !mainNav.contains(e.target) &&
+        !mobileBtn.contains(e.target)
+      ) {
+        closeMobileMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+        closeMobileMenu();
+      }
     });
   }
 
@@ -3257,7 +3859,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Step Switching
-  const goToStep = (stepNumber) => {
+  const wizardCard = document.getElementById('booking-wizard-container');
+  const goToStep = (stepNumber, shouldScroll = false) => {
     state.currentStep = stepNumber;
     wizardSteps.forEach((stepEl, idx) => {
       stepEl.classList.toggle('active', idx + 1 === stepNumber);
@@ -3268,26 +3871,30 @@ document.addEventListener('DOMContentLoaded', () => {
       indEl.classList.toggle('completed', s < stepNumber);
     });
     updateSummary();
+
+    if (shouldScroll && window.innerWidth <= 768 && wizardCard) {
+      wizardCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   document.querySelectorAll('[data-next-step]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const next = Number(btn.getAttribute('data-next-step'));
-      goToStep(next);
+      goToStep(next, true);
     });
   });
 
   document.querySelectorAll('[data-prev-step]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const prev = Number(btn.getAttribute('data-prev-step'));
-      goToStep(prev);
+      goToStep(prev, true);
     });
   });
 
   stepIndicators.forEach((ind) => {
     ind.addEventListener('click', () => {
       const target = Number(ind.getAttribute('data-goto-step'));
-      goToStep(target);
+      goToStep(target, true);
     });
   });
 
@@ -3520,7 +4127,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('booking-confirmation-view').style.display = 'none';
       document.querySelector('.stepper').style.display = 'grid';
       appointmentForm.style.display = 'block';
-      goToStep(1);
+      goToStep(1, true);
     });
   }
 
@@ -3564,6 +4171,13 @@ window.switchDemoView = function(viewName, thema, ort) {
   const tabHome = document.getElementById('demo-tab-home');
   const tabTermin = document.getElementById('demo-tab-termin');
   const headerCta = document.getElementById('header-booking-btn');
+  const mainNav = document.getElementById('main-nav');
+  const mobileBtn = document.getElementById('mobile-menu-toggle');
+
+  if (mainNav && mainNav.classList.contains('open')) {
+    mainNav.classList.remove('open');
+    if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'false');
+  }
 
   if (viewName === 'termin') {
     homeView.style.display = 'none';

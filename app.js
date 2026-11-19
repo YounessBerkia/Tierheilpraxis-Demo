@@ -11,16 +11,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainNav = document.getElementById('main-nav');
 
   if (mobileBtn && mainNav) {
+    const closeMobileMenu = () => {
+      mainNav.classList.remove('open');
+      mobileBtn.setAttribute('aria-expanded', 'false');
+    };
+
     mobileBtn.addEventListener('click', () => {
       const isOpen = mainNav.classList.toggle('open');
       mobileBtn.setAttribute('aria-expanded', String(isOpen));
     });
 
     mainNav.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        mainNav.classList.remove('open');
-        mobileBtn.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (
+        mainNav.classList.contains('open') &&
+        !mainNav.contains(e.target) &&
+        !mobileBtn.contains(e.target)
+      ) {
+        closeMobileMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+        closeMobileMenu();
+      }
     });
   }
 
@@ -187,7 +205,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Step Switching
-  const goToStep = (stepNumber) => {
+  const wizardCard = document.getElementById('booking-wizard-container');
+  const goToStep = (stepNumber, shouldScroll = false) => {
     state.currentStep = stepNumber;
     wizardSteps.forEach((stepEl, idx) => {
       stepEl.classList.toggle('active', idx + 1 === stepNumber);
@@ -198,26 +217,30 @@ document.addEventListener('DOMContentLoaded', () => {
       indEl.classList.toggle('completed', s < stepNumber);
     });
     updateSummary();
+
+    if (shouldScroll && window.innerWidth <= 768 && wizardCard) {
+      wizardCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   document.querySelectorAll('[data-next-step]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const next = Number(btn.getAttribute('data-next-step'));
-      goToStep(next);
+      goToStep(next, true);
     });
   });
 
   document.querySelectorAll('[data-prev-step]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const prev = Number(btn.getAttribute('data-prev-step'));
-      goToStep(prev);
+      goToStep(prev, true);
     });
   });
 
   stepIndicators.forEach((ind) => {
     ind.addEventListener('click', () => {
       const target = Number(ind.getAttribute('data-goto-step'));
-      goToStep(target);
+      goToStep(target, true);
     });
   });
 
@@ -450,7 +473,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('booking-confirmation-view').style.display = 'none';
       document.querySelector('.stepper').style.display = 'grid';
       appointmentForm.style.display = 'block';
-      goToStep(1);
+      goToStep(1, true);
     });
   }
 
