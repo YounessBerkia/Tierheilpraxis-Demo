@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hausbesuch &amp; Termin vereinbaren | Mobile Tierheilpraxis Heike Mathes</title>
+  <meta name="description" content="Vereinbaren Sie einen stressfreien Hausbesuch oder ein telefonisches Beratungsgespräch bei Tierheilpraktikerin Heike Mathes im Rhein-Main-Gebiet." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ====================================================================
+       STICKY HEADER
+       ==================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Zurück zur Startseite Mobile Tierheilpraxis Heike Mathes">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Heike Mathes</span>
+          <span class="brand-sub">Mobile Tierheilpraxis · Seit 2003</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+        <a href="index.html#ueber-mich" class="nav-link">Über mich</a>
+        <a href="index.html#therapien" class="nav-link">Therapien</a>
+        <a href="index.html#homoeopathie-spezial" class="nav-link">Homöopathie</a>
+        <a href="index.html#hausbesuch" class="nav-link">Tätigkeitsraum</a>
+        <a href="termin.html" class="nav-link active">Termin-Assistent</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="tel:+496144337222" class="phone-pill" title="Direkt anrufen: 06144 - 33 72 22">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span>06144 - 33 72 22</span>
+        </a>
+        <a href="index.html" class="btn btn--secondary btn--sm">
+          ← Zur Startseite
+        </a>
+        <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Menü öffnen" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ====================================================================
+         BOOKING HERO HEADER
+         ==================================================================== -->
+    <section class="booking-hero">
+      <div class="container">
+        <span class="eyebrow">Online-Terminvereinbarung &amp; Vor-Anamnese (Demo)</span>
+        <h1 style="font-size: clamp(1.85rem, 3vw + 0.75rem, 2.75rem); margin-bottom: 0.65rem;">
+          Hausbesuch oder Beratungstermin <em>unverbindlich erstellen</em>
+        </h1>
+        <p style="max-width: 72ch;">
+          Stellen Sie hier in 4 kurzen Schritten Ihren Terminwunsch für das Rhein-Main-Gebiet zusammen. Da ich mir für jedes Tier individuell Zeit nehme, bestätige ich Ihnen den endgültigen Termin persönlich innerhalb meiner Sprechzeiten (Mo–Fr 8:30–19:30 Uhr, Sa 8:30–13:00 Uhr).
+        </p>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         INTERACTIVE 4-STEP APPOINTMENT WIZARD + LIVE SUMMARY
+         ==================================================================== -->
+    <section class="booking-layout">
+      <div class="container booking-grid">
+
+        <!-- LEFT COLUMN: WIZARD CARD -->
+        <div class="wizard-card" id="booking-wizard-container">
+          <!-- Stepper Navigation -->
+          <div class="stepper" role="tablist" aria-label="Schritte der Terminerstellung">
+            <button type="button" class="step-indicator active" data-goto-step="1" id="step-ind-1">
+              <span class="step-badge">1</span>
+              <span>Tier &amp; Anliegen</span>
+            </button>
+            <button type="button" class="step-indicator" data-goto-step="2" id="step-ind-2">
+              <span class="step-badge">2</span>
+              <span>Hausbesuch-Ort</span>
+            </button>
+            <button type="button" class="step-indicator" data-goto-step="3" id="step-ind-3">
+              <span class="step-badge">3</span>
+              <span>Wunschtermin</span>
+            </button>
+            <button type="button" class="step-indicator" data-goto-step="4" id="step-ind-4">
+              <span class="step-badge">4</span>
+              <span>Kontakt &amp; Senden</span>
+            </button>
+          </div>
+
+          <form id="appointment-form" novalidate>
+            <!-- ============================================================
+                 SCHRITT 1: TIER & ANLIEGEN
+                 ============================================================ -->
+            <div class="wizard-step active" id="wizard-step-1">
+              <h2 style="font-size: 1.5rem; margin-bottom: 0.4rem;">1. Um welches Tier und welches Anliegen geht es?</h2>
+              <p style="font-size: 0.94rem; margin-bottom: 1.65rem;">
+                Wählen Sie die Tierart und einen oder mehrere gewünschte Schwerpunkte für unseren Termin aus.
+              </p>
+
+              <!-- Tierart Auswahl -->
+              <div class="form-group">
+                <label class="form-label">Tierart auswählen *</label>
+                <div class="pet-selector" role="radiogroup" aria-label="Tierart">
+                  <button type="button" class="pet-option selected" data-pet="Hund" id="pet-btn-hund">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.703 1.725 1.722 3.656 1 1.261-.472 1.96-1.45 2.344-2.5"/>
+                      <path d="M14.267 5.172c0-1.39 1.577-2.493 3.5-2.172 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5"/>
+                      <path d="M8 14v.5"/><path d="M16 14v.5"/>
+                      <path d="M11.25 16.25h1.5L12 17l-.75-.75Z"/>
+                      <path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444c0-1.061-.162-2.2-.493-3.309m-9.243-6.082A8.801 8.801 0 0 1 12 5c.78 0 1.5.108 2.161.306"/>
+                    </svg>
+                    <strong>Hund</strong>
+                    <span>Stressfrei zu Hause</span>
+                  </button>
+
+                  <button type="button" class="pet-option" data-pet="Katze" id="pet-btn-katze">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 5c.67 0 1.35.09 2 .26 1.78-2 5.03-2.84 6.42-2.26 1.4.58-.42 7-.42 7 .57 1.07 1 2.24 1 3.44C21 17.9 16.97 21 12 21s-9-3.1-9-7.56c0-1.25.5-2.4 1-3.44 0 0-1.89-6.42-.5-7 1.39-.58 4.72.23 6.5 2.23A9.04 9.04 0 0 1 12 5Z"/>
+                      <path d="M8 14v.5"/><path d="M16 14v.5"/>
+                      <path d="M11.25 16.25h1.5L12 17l-.75-.75Z"/>
+                    </svg>
+                    <strong>Katze</strong>
+                    <span>Ohne Transportbox-Stress</span>
+                  </button>
+
+                  <button type="button" class="pet-option" data-pet="Kleintier" id="pet-btn-kleintier">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M13 16a3 3 0 0 1 2.24 5"/>
+                      <path d="M18 12h.01"/>
+                      <path d="M18 21h-8a4 4 0 0 1-4-4 7 7 0 0 1 7-7h.2L9.6 6.4a1 1 0 1 1 2.8-2.8L15.8 7h.2c3.3 0 6 2.7 6 6v1a2 2 0 0 1-2 2h-1a3 3 0 0 0-3 3"/>
+                      <path d="M20 8.54V4a2 2 0 1 0-4 0v3"/>
+                    </svg>
+                    <strong>Kleintier</strong>
+                    <span>Kaninchen, Meerschweinchen etc.</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Name & Alter des Tieres -->
+              <div class="form-row form-group">
+                <div>
+                  <label class="form-label" for="pet-name">Name des Tieres (optional)</label>
+                  <input type="text" id="pet-name" class="form-input" placeholder="z. B. Luna oder Balu" />
+                </div>
+                <div>
+                  <label class="form-label" for="pet-age">Alter / Rasse (optional)</label>
+                  <input type="text" id="pet-age" class="form-input" placeholder="z. B. 7 Jahre, Golden Retriever" />
+                </div>
+              </div>
+
+              <!-- Schwerpunkte / Therapien (exakt nach Projektdoku) -->
+              <div class="form-group">
+                <label class="form-label">Gewünschter Schwerpunkt / Therapie * (Mehrfachauswahl möglich)</label>
+                <div class="service-chips" id="service-chips-container">
+                  <button type="button" class="service-chip selected" data-service="Klassische Homöopathie & Erstanamnese" data-key="homoeopathie">
+                    <span class="chip-check">✓</span>
+                    <div class="service-chip-text">
+                      <strong>Klassische Tierhomöopathie</strong>
+                      <span>Ausführliche Erstanamnese &amp; Einzelmittel-Regulation</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="service-chip" data-service="Konstitutionstherapie (chronische Beschwerden)" data-key="konstitution">
+                    <span class="chip-check">✓</span>
+                    <div class="service-chip-text">
+                      <strong>Konstitutionstherapie</strong>
+                      <span>Ermittlung des Konstitutionstyps bei chronischen Leiden</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="service-chip" data-service="Haaranalyse (Vegatestung) / Gesundheitscheck" data-key="haaranalyse">
+                    <span class="chip-check">✓</span>
+                    <div class="service-chip-text">
+                      <strong>Haaranalyse (Vegatestung)</strong>
+                      <span>Ursachenforschung bei komplexen Beschwerden &amp; Check-up</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="service-chip" data-service="Artgerechte Ernährung & Futter-Check" data-key="ernaehrung">
+                    <span class="chip-check">✓</span>
+                    <div class="service-chip-text">
+                      <strong>Ernährungsberatung &amp; Futter-Check</strong>
+                      <span>Ernährungsplan + Prüfung von Futter, Snacks &amp; Kauknochen</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="service-chip" data-service="Horvi-Enzymtherapie" data-key="horvi">
+                    <span class="chip-check">✓</span>
+                    <div class="service-chip-text">
+                      <strong>Horvi-Enzymtherapie</strong>
+                      <span>Sanfte naturheilkundliche Enzymregulation</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="service-chip" data-service="Naturheilkunde bei Parasiten" data-key="parasiten">
+                    <span class="chip-check">✓</span>
+                    <div class="service-chip-text">
+                      <strong>Naturheilkunde bei Parasiten</strong>
+                      <span>Zecken, Milben, Flöhe, Würmer, Giardien &amp; Kokzidien</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="service-chip" data-service="Begleitung bei tierklinischen Eingriffen (OP / Narkose)" data-key="eingriffe">
+                    <span class="chip-check">✓</span>
+                    <div class="service-chip-text">
+                      <strong>Tierklinische Eingriffe (OP / Narkose)</strong>
+                      <span>Stressprophylaxe, Narkose-Ausleitung &amp; Wundheilung</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="service-chip" data-service="Auffälliges Verhalten / Eingewöhnung & Umzug" data-key="verhalten">
+                    <span class="chip-check">✓</span>
+                    <div class="service-chip-text">
+                      <strong>Verhalten, Reisekrankheit &amp; Eingewöhnung</strong>
+                      <span>Angst, Unsauberkeit, Leckekzeme, Welpen/Tierschutz/Umzug</span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+
+              <div class="wizard-footer">
+                <span style="font-size: 0.85rem; color: var(--text-secondary);">Schritt 1 von 4</span>
+                <button type="button" class="btn btn--primary" data-next-step="2" id="btn-to-step-2">
+                  Weiter zum Hausbesuch-Ort →
+                </button>
+              </div>
+            </div>
+
+            <!-- ============================================================
+                 SCHRITT 2: ORT DES HAUSBESUCHS (RHEIN-MAIN)
+                 ============================================================ -->
+            <div class="wizard-step" id="wizard-step-2">
+              <h2 style="font-size: 1.5rem; margin-bottom: 0.4rem;">2. Wo findet der Hausbesuch statt?</h2>
+              <p style="font-size: 0.94rem; margin-bottom: 1.65rem;">
+                Als mobile Tierheilpraxis komme ich im gesamten Rhein-Main-Gebiet direkt zu Ihnen nach Hause. Alternativ ist auch ein telefonisches Vorgespräch möglich.
+              </p>
+
+              <div class="form-group">
+                <label class="form-label" for="visit-type">Art des Termins *</label>
+                <select id="visit-type" class="form-select">
+                  <option value="Mobiler Hausbesuch vor Ort">Mobiler Hausbesuch bei Ihnen zu Hause (Rhein-Main-Gebiet)</option>
+                  <option value="Telefonisches Vorgespräch & Beratung">Zunächst telefonisches Vorgespräch / Beratung</option>
+                  <option value="Haaranalyse (Vegatestung) & telefonische Besprechung">Haaranalyse (Vegatestung) &amp; ausführliche Besprechung</option>
+                </select>
+              </div>
+
+              <div class="form-row form-group">
+                <div>
+                  <label class="form-label" for="city-select">Ort im Tätigkeitsgebiet auswählen *</label>
+                  <select id="city-select" class="form-select">
+                    <option value="Bischofsheim">65474 Bischofsheim (Praxissitz)</option>
+                    <option value="Mainz">Mainz</option>
+                    <option value="Wiesbaden">Wiesbaden</option>
+                    <option value="Groß-Gerau">Groß-Gerau</option>
+                    <option value="Ginsheim-Gustavsburg">Ginsheim-Gustavsburg</option>
+                    <option value="Flörsheim">Flörsheim am Main</option>
+                    <option value="Hochheim">Hochheim am Main</option>
+                    <option value="Oppenheim">Oppenheim</option>
+                    <option value="Nierstein">Nierstein</option>
+                    <option value="Weiterer Ort im Rhein-Main-Gebiet">Weiterer Ort im Rhein-Main-Gebiet (bitte unten angeben)</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="form-label" for="address-input">Straße, Hausnummer &amp; ggf. PLZ/Ort</label>
+                  <input type="text" id="address-input" class="form-input" placeholder="z. B. Rheinstraße 12" />
+                </div>
+              </div>
+
+              <div class="area-status-banner" id="area-feedback-banner">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span id="area-feedback-text">
+                  <strong>Bischofsheim</strong> liegt im direkten Kerngebiet der Mobilen Tierheilpraxis Heike Mathes.
+                </span>
+              </div>
+
+              <div class="wizard-footer">
+                <button type="button" class="btn btn--secondary" data-prev-step="1">
+                  ← Zurück
+                </button>
+                <button type="button" class="btn btn--primary" data-next-step="3" id="btn-to-step-3">
+                  Weiter zum Wunschtermin →
+                </button>
+              </div>
+            </div>
+
+            <!-- ============================================================
+                 SCHRITT 3: WUNSCHTERMIN & ZEITFENSTER
+                 ============================================================ -->
+            <div class="wizard-step" id="wizard-step-3">
+              <h2 style="font-size: 1.5rem; margin-bottom: 0.4rem;">3. Wann passt es Ihnen und Ihrem Tier am besten?</h2>
+              <p style="font-size: 0.94rem; margin-bottom: 1.65rem;">
+                Meine regulären Sprech- und Terminzeiten sind <strong>Montag bis Freitag von 08:30 – 19:30 Uhr</strong> sowie <strong>Samstag von 08:30 – 13:00 Uhr</strong>.
+              </p>
+
+              <div class="form-row form-group">
+                <div>
+                  <label class="form-label" for="preferred-date">Gewünschtes Datum *</label>
+                  <input type="date" id="preferred-date" class="form-input" required />
+                  <span class="form-hint" id="date-day-hint" style="margin-top: 0.4rem; color: var(--primary-sage); font-weight: 500;">
+                    Bitte wählen Sie einen Werktag (Mo–Sa).
+                  </span>
+                </div>
+                <div>
+                  <label class="form-label" for="alternative-date">Alternativ-Tag / Flexibilität (optional)</label>
+                  <input type="text" id="alternative-date" class="form-input" placeholder="z. B. generell dienstags oder nachmittags" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Bevorzugte Uhrzeit / Zeitfenster auswählen *</label>
+                <span class="form-hint" id="slots-subhint">Verfügbare Zeitfenster gemäß Sprechzeiten:</span>
+                <div class="time-slots-grid" id="time-slots-container">
+                  <button type="button" class="time-slot-btn" data-slot="08:30 – 10:30 Uhr (Vormittag)">08:30 – 10:30 Uhr</button>
+                  <button type="button" class="time-slot-btn selected" data-slot="10:30 – 12:30 Uhr (Vormittag)">10:30 – 12:30 Uhr</button>
+                  <button type="button" class="time-slot-btn" data-slot="13:00 – 15:00 Uhr (Mittag)">13:00 – 15:00 Uhr</button>
+                  <button type="button" class="time-slot-btn" data-slot="15:00 – 17:00 Uhr (Nachmittag)">15:00 – 17:00 Uhr</button>
+                  <button type="button" class="time-slot-btn" data-slot="17:00 – 19:30 Uhr (Spätnachmittag/Abend)">17:00 – 19:30 Uhr</button>
+                  <button type="button" class="time-slot-btn" data-slot="Flexibel nach telefonischer Rücksprache">Zeitlich flexibel</button>
+                </div>
+              </div>
+
+              <div class="wizard-footer">
+                <button type="button" class="btn btn--secondary" data-prev-step="2">
+                  ← Zurück
+                </button>
+                <button type="button" class="btn btn--primary" data-next-step="4" id="btn-to-step-4">
+                  Weiter zu Ihren Kontaktdaten →
+                </button>
+              </div>
+            </div>
+
+            <!-- ============================================================
+                 SCHRITT 4: KONTAKTDATEN & VORBERICHT
+                 ============================================================ -->
+            <div class="wizard-step" id="wizard-step-4">
+              <h2 style="font-size: 1.5rem; margin-bottom: 0.4rem;">4. Ihre Kontaktdaten für die Terminbestätigung</h2>
+              <p style="font-size: 0.94rem; margin-bottom: 1.65rem;">
+                Ich melde mich zeitnah telefonisch oder per E-Mail bei Ihnen, um den Termin verbindlich zu bestätigen und eventuelle Vorab-Fragen zu klären.
+              </p>
+
+              <div class="form-row form-group">
+                <div>
+                  <label class="form-label" for="owner-name">Ihr Vor- und Nachname *</label>
+                  <input type="text" id="owner-name" class="form-input" placeholder="z. B. Sabine Beispiel" required />
+                </div>
+                <div>
+                  <label class="form-label" for="owner-phone">Telefon / Mobil für Rückruf *</label>
+                  <input type="tel" id="owner-phone" class="form-input" placeholder="z. B. 0172 - 123 45 67" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="owner-email">Ihre E-Mail-Adresse (optional)</label>
+                <input type="email" id="owner-email" class="form-input" placeholder="name@beispiel.de" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="owner-notes">Kurze Schilderung der Beschwerden / bisherige Medikamente / Futter (optional)</label>
+                <textarea id="owner-notes" class="form-textarea" rows="4" placeholder="z. B. Seit wann bestehen die Beschwerden? Wurden bereits Antibiotika, Cortison oder Schmerzmittel gegeben? Welches Futter und welche Leckerchen bekommt Ihr Tier aktuell?"></textarea>
+              </div>
+
+              <p id="form-error-msg" style="color: #B8432E; font-size: 0.88rem; font-weight: 600; display: none; margin-bottom: 1rem;">
+                Bitte geben Sie mindestens Ihren Namen und eine Telefonnummer für den Rückruf an.
+              </p>
+
+              <div class="wizard-footer">
+                <button type="button" class="btn btn--secondary" data-prev-step="3">
+                  ← Zurück
+                </button>
+                <button type="submit" class="btn btn--primary" id="submit-booking-btn">
+                  Terminanfrage jetzt erstellen ✓
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!-- ============================================================
+               CONFIRMATION VIEW (SHOWN AFTER SUBMIT)
+               ============================================================ -->
+          <div id="booking-confirmation-view" style="display: none;">
+            <div style="display: inline-flex; align-items: center; gap: 0.6rem; background-color: var(--primary-mist); color: var(--primary-sage); padding: 0.5rem 1rem; border-radius: 999px; font-weight: 600; font-size: 0.86rem; margin-bottom: 1.25rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Terminanfrage erfolgreich zusammengestellt</span>
+            </div>
+
+            <h2 style="font-size: 1.75rem; margin-bottom: 0.65rem;">
+              Vielen Dank, <span id="conf-owner-name"></span>!
+            </h2>
+            <p style="margin-bottom: 1.5rem;">
+              Ihre Anfrage (<strong id="conf-ref-id">#THP-2026</strong>) für den Hausbesuch bzw. die Beratung wurde aufbereitet. Sie können die Anfrage jetzt direkt per Klick an <strong>Heike Mathes</strong> übermitteln oder den Wunschtermin als Kalendereintrag speichern.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 2rem;">
+              <a href="#" id="conf-mailto-btn" class="btn btn--primary">
+                Per E-Mail an Frau Mathes senden (tierheilpraxis-mathes@gmx.de)
+              </a>
+              <button type="button" id="conf-ics-btn" class="btn btn--secondary">
+                Kalendereintrag (.ics) speichern
+              </button>
+              <button type="button" id="conf-reset-btn" class="btn btn--ghost">
+                Neue Anfrage bearbeiten
+              </button>
+            </div>
+
+            <div style="border-top: 1px solid var(--border-stone); padding-top: 1.5rem;">
+              <span class="eyebrow">Präsentations-Vorschau für Frau Mathes (Demo-Feature)</span>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">
+                So übersichtlich kommt diese Terminanfrage in Ihrem Praxis-Postfach an:
+              </h3>
+              <p style="font-size: 0.88rem;">
+                Durch die strukturierte Vorab-Abfrage wissen Sie schon vor dem Rückruf genau, um welches Tier, welchen Ort im Rhein-Main-Gebiet und welches Anliegen es geht:
+              </p>
+              <div class="email-preview-box" id="conf-email-preview"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: LIVE SUMMARY SIDEBAR -->
+        <aside class="summary-sidebar" aria-label="Zusammenfassung Ihres Terminwunschs">
+          <div class="summary-card">
+            <h3>Ihre Termin-Übersicht</h3>
+            <div class="summary-list">
+              <div class="summary-row">
+                <span class="summary-label">Tierart &amp; Name</span>
+                <span class="summary-val" id="sum-pet">Hund</span>
+              </div>
+              <div class="summary-row">
+                <span class="summary-label">Gewählte Schwerpunkte</span>
+                <span class="summary-val" id="sum-services">Klassische Homöopathie &amp; Erstanamnese</span>
+              </div>
+              <div class="summary-row">
+                <span class="summary-label">Terminart &amp; Ort (Rhein-Main)</span>
+                <span class="summary-val" id="sum-location">Mobiler Hausbesuch · Bischofsheim</span>
+              </div>
+              <div class="summary-row">
+                <span class="summary-label">Wunschdatum &amp; Zeitfenster</span>
+                <span class="summary-val" id="sum-datetime">Bitte im 3. Schritt wählen</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border-stone); display: flex; align-items: center; gap: 0.85rem;">
+              <img src="Bild_2.png" alt="Anamnese beim Hausbesuch" style="width: 64px; height: 64px; border-radius: 12px; object-fit: cover; flex-shrink: 0;" />
+              <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">
+                <strong style="color: var(--text-primary); display: block;">Stressfrei bei Ihnen vor Ort</strong>
+                Keine Anfahrts- oder Wartezimmerbelastung für Ihr Tier.
+              </div>
+            </div>
+          </div>
+
+          <div class="summary-card" style="background-color: var(--bg-secondary);">
+            <h4 style="font-family: var(--font-sans); font-size: 0.9rem; color: var(--primary-sage); margin-bottom: 0.5rem;">
+              Lieber direkt telefonisch vereinbaren?
+            </h4>
+            <p style="font-size: 0.85rem; margin-bottom: 0.9rem;">
+              Sie erreichen mich Montag bis Freitag von 8:30 – 19:30 Uhr und Samstag von 8:30 – 13:00 Uhr:
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem; font-size: 0.92rem; font-weight: 600;">
+              <a href="tel:+496144337222" style="color: var(--primary-sage);">Tel. 06144 - 33 72 22</a>
+              <a href="tel:+491728010221" style="color: var(--primary-sage);">Mobil 0172 - 80 10 22 1</a>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================================================================
+       FOOTER (IDENTISCH & RECHTSSICHER NACH HWG & § 5 DDG)
+       ==================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Mobile Tierheilpraxis Heike Mathes</h3>
+          <p>
+            Geprüfte Tierheilpraktikerin (ATM) · Schwerpunkt Klassische Tierhomöopathie, Horvi-Enzymtherapie, Haaranalyse &amp; artgerechte Ernährung im Rhein-Main-Gebiet.
+          </p>
+          <p style="font-size: 0.85rem; color: rgba(220,229,223,0.65);">
+            Im Griesböhl 2 · 65474 Bischofsheim · Tel. 06144 - 33 72 22 · Mobil 0172 - 80 10 22 1
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html">Startseite</a>
+            <a href="index.html#ueber-mich">Über mich &amp; Ausbildung</a>
+            <a href="index.html#therapien">Therapien &amp; Schwerpunkte</a>
+            <a href="index.html#hausbesuch">Tätigkeitsraum Rhein-Main</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Rechtliches &amp; Partner</h4>
+          <div class="footer-links">
+            <button type="button" data-open-modal="modal-impressum">Impressum (§ 5 DDG)</button>
+            <button type="button" data-open-modal="modal-datenschutz">Datenschutzerklärung</button>
+            <a href="https://www.rb-tierfotografie.de" target="_blank" rel="noopener noreferrer">Partner: RB Tierfotografie ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hwg-notice" role="note" aria-label="Rechtlicher Hinweis nach dem Heilmittelwerbegesetz">
+        <strong>Rechtlicher Hinweis gemäß Heilmittelwerbegesetz (§ 3 HWG):</strong>
+        Aus rechtlichen Gründen weise ich darauf hin, dass es sich bei den auf dieser Website vorgestellten Diagnose- und Therapieverfahren – insbesondere der klassischen Homöopathie, der Horvi-Enzymtherapie sowie der Haaranalyse (Vegatestung) – um Verfahren der naturheilkundlichen Erfahrungsmedizin handelt, die wissenschaftlich nicht bewiesen und von der Schulmedizin nicht anerkannt sind. Alle getroffenen Aussagen über Eigenschaften, Wirkungen und Indikationen beruhen auf den Erkenntnissen und Erfahrungen der jeweiligen Therapierichtung selbst; ein Heilversprechen wird damit ausdrücklich nicht abgegeben.
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2003–2026 Mobile Tierheilpraxis Heike Mathes, Bischofsheim. Alle Rechte vorbehalten.</span>
+        <span>Konzept- &amp; Redesign-Demo</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL: IMPRESSUM -->
+  <div class="modal-backdrop" id="modal-impressum" role="dialog" aria-modal="true" aria-labelledby="impressum-title">
+    <div class="modal-dialog">
+      <button class="modal-close" type="button" data-close-modal aria-label="Schließen">✕</button>
+      <h2 id="impressum-title">Impressum</h2>
+      <p><strong>Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz):</strong></p>
+      <p>
+        <strong>Inhaberin / Vertreten durch:</strong><br />
+        Heike Mathes<br />
+        Berufsbezeichnung: Tierheilpraktikerin (Prüfung 2003 an der ATM – Akademie für Tiernaturheilkunde, Bad Bramstedt)<br />
+        Im Griesböhl 2<br />
+        65474 Bischofsheim
+      </p>
+      <p>
+        <strong>Kontakt:</strong><br />
+        Telefon: 06144 - 33 72 22<br />
+        Mobil: 0172 - 80 10 22 1<br />
+        E-Mail: <a href="mailto:tierheilpraxis-mathes@gmx.de" style="text-decoration: underline;">tierheilpraxis-mathes@gmx.de</a>
+      </p>
+      <p><strong>Finanzamt:</strong> Sitz Groß-Gerau</p>
+    </div>
+  </div>
+
+  <!-- MODAL: DATENSCHUTZ -->
+  <div class="modal-backdrop" id="modal-datenschutz" role="dialog" aria-modal="true" aria-labelledby="datenschutz-title">
+    <div class="modal-dialog">
+      <button class="modal-close" type="button" data-close-modal aria-label="Schließen">✕</button>
+      <h2 id="datenschutz-title">Datenschutzerklärung</h2>
+      <p>
+        <strong>Verantwortliche Stelle:</strong><br />
+        Heike Mathes · Mobile Tierheilpraxis · Im Griesböhl 2, 65474 Bischofsheim · Tel. 06144 - 33 72 22 · E-Mail: tierheilpraxis-mathes@gmx.de
+      </p>
+      <p>
+        Ihre im Rahmen der Terminanfrage eingegebenen Daten werden ausschließlich lokal in Ihrem Browser zur Vorbereitung der Terminanfrage verarbeitet und nur auf Ihren ausdrücklichen Klick hin an die Praxis übermittelt.
+      </p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
